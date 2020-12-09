@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css" integrity="sha384-DhY6onE6f3zzKbjUPRc2hOzGAdEf4/Dz+WJwBvEYL/lkkIsI3ihufq9hk9K4lVoK" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+  </head>
+  <body>
+<div class="container py-5" >
+	<div class="card" >
+		<div class="card-body" >
+<form action="" >
+  <div class="form-group">
+    <label for="reg" class="form-label">Reg. No.</label>
+    <input type="number" class="form-control" id="reg" name="reg" aria-describedby="regHelp">
+    <div id="reglHelp" class="form-text">We'll never share your email with anyone else.</div>
+  </div>
+  
+  <div class="form-group">
+  <label for="mob" class="form-label">Mobile No.</label>
+  <input type="tel" class="form-control" id="mob" name="mob"  aria-describedby="mobHelp">
+  <div id="mobHelp" class="form-text">We'll never share your email with anyone else.</div>
+  </div>
+  
+  <div class="form-group">
+  <label for="em" class="form-label">Email address</label>
+  <input type="email" class="form-control" id="em" name="em" aria-describedby="emailHelp">
+  <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+  </div>
+  
+  <div class="form-group">
+    <label for="pw" class="form-label">Password</label>
+    <input type="password" class="form-control" name="pw" id="pw">
+  </div>
+  <div class="form-group form-check">
+    <input type="checkbox" class="form-check-input" name="ckbx" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+		</div>
+	</div>
+</div>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+    <!-- Option 1: Bootstrap Bundle with Popper.js -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/js/bootstrap.bundle.min.js" integrity="sha384-BOsAfwzjNJHrJ8cZidOg56tcQWfp6y72vEJ8xQ9w6Quywb24iOsW913URv1IS4GD" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper.js and Bootstrap JS
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/js/bootstrap.min.js" integrity="sha384-5h4UG+6GOuV9qXh6HqOLwZMY4mnLPraeTrjT5v07o347pj6IkfuoASuGBhfDsp3d" crossorigin="anonymous"></script>
+    -->
+    
+    <script type="text/javascript">
+    $(document).ready(function (){
+    
+	    var reg = $("#reg");
+	    var mob = $("#mob");
+	    var em = $("#em");
+	    
+	    reg.on({
+		    focus: function(){
+			    mob.attr('disabled','disabled').parent(".form-group").slideUp();
+			    em.attr('disabled','disabled').parent(".form-group").slideUp();
+		    },
+		    blur: function (){
+			    if($(this).val().length === 0){
+				    mob.removeAttr('disabled').parent(".form-group").slideDown();
+				    em.removeAttr('disabled').parent(".form-group").slideDown();
+			    }
+		    }
+	    });
+	    
+	    em.on({
+		    focus: function(){
+			    mob.attr('disabled','disabled').parent(".form-group").slideUp();
+			    reg.attr('disabled','disabled').parent(".form-group").slideUp();
+		    },
+		    blur: function (){
+			    if($(this).val().length === 0){
+				    mob.removeAttr('disabled').parent(".form-group").slideDown();
+				    reg.removeAttr('disabled').parent(".form-group").slideDown();
+			    }
+		    }
+	    });
+	    
+	    mob.on({
+		    focus: function(){
+			    reg.attr('disabled','disabled').parent(".form-group").slideUp();
+			    em.attr('disabled','disabled').parent(".form-group").slideUp() ;
+		    },
+		    blur: function (){
+			    if($(this).val().length === 0){
+				    reg.removeAttr('disabled').parent(".form-group").slideDown() ;
+				    em.removeAttr('disabled').parent(".form-group").slideDown() ;
+			    }
+		    }
+	    });
+	    
+	    
+	    
+	    
+	    
+	    
+    });
+    
+    </script>
+  </body>
+</html>
